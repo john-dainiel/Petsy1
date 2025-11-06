@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🐾 Petsy Community</title>
+  <link rel="stylesheet" href="css/community.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <h2>🐾 Petsy</h2>
+      <span class="nav-sub">Community Feed</span>
+         <button onclick="window.location.href='main.html'">Back to Pet</button>
+    </div>
+    <div class="nav-right">
+      <button onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <section class="create-section">
+    <div class="create-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="profile-pic" />
+      <textarea id="postContent" placeholder="Share what your pet is doing..." maxlength="300"></textarea>
+    </div>
+    <div class="create-actions">
+      <input type="text" id="postImage" placeholder="Image URL (optional)" />
+      <button onclick="createPost()">Post 🐾</button>
+    </div>
+  </section>
+
+  <section id="feed" class="feed"></section>
+
+  <script src="community.js"></script>
+</body>
+</html>

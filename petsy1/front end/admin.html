@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🐾 PETSY Admin Dashboard</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <!-- 🔺 Logout -->
+  <button id="logoutBtn" class="logout-btn">Logout</button>
+
+  <!-- 🌐 Layout Wrapper -->
+  <div class="admin-layout">
+    <!-- 🧭 Sidebar -->
+    <aside class="sidebar">
+      <h2>🐾 PETSY</h2>
+      <nav>
+        <ul>
+          <li id="tabUsers" class="active">👤 Users</li>
+          <li id="tabPets">🐾 Pets</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- 📊 Main Content -->
+    <main class="main-content">
+      <header class="admin-header">
+        <h1 class="dashboard-title">Admin Dashboard</h1>
+        <p class="admin-greeting">Manage users and pets here 🐶🐱</p>
+      </header>
+
+      <!-- 👤 USERS SECTION -->
+      <section id="usersSection" class="content-section">
+        <div class="panel-header">
+          <h2>👤 Users</h2>
+          <button class="btn" onclick="addUser()">➕ Add User</button>
+        </div>
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- 🐾 PETS SECTION -->
+      <section id="petsSection" class="content-section hidden">
+        <div class="panel-header">
+          <h2>🐾 Pets</h2>
+          <button class="btn" onclick="addPet()">➕ Add Pet</button>
+        </div>
+        <table id="petsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Owner</th>
+              <th>Pet Name</th>
+              <th>Type</th>
+              <th>Hunger</th>
+              <th>Energy</th>
+              <th>Happiness</th>
+              <th>Co-Parent</th>
+              <th>Coins</th>
+              <th>Created</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <footer class="sticky-footer">
+    © 2025 PETSY Admin Panel
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

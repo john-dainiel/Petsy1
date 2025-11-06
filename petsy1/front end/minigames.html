@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🎯 PETSY Mini Games</title>
+  <link rel="stylesheet" href="css/minigames.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>🎯 PETSY Mini Games</h1>
+      <p class="sub">Win coins by playing games — win 10 times in each category to earn a free treat!</p>
+    </div>
+    <div id="petCoins" class="coins">Your Coins: 0 🪙</div>
+  </header>
+
+  <main class="container">
+    <section class="left-col">
+      <div id="gameStats" class="stats-box">
+        <h3>🎮 Game Progress</h3>
+        <p id="easyWins">Easy Wins: 0 / 10 🎁 Small Treat</p>
+        <p id="mediumWins">Medium Wins: 0 / 10 🎁 Medium Treat</p>
+        <p id="hardWins">Hard Wins: 0 / 10 🎁 Large Treat</p>
+      </div>
+
+      <div class="games">
+        <button class="game-btn" id="easyGame" aria-describedby="easy-desc">🪙 Heads or Tails (Easy — 5 coins)</button>
+        <div id="easy-desc" class="sr-only">Press to play heads or tails</div>
+
+        <button class="game-btn" id="mediumGame" aria-describedby="medium-desc">🎯 Guess Number 1–3 (Medium — 10 coins)</button>
+        <div id="medium-desc" class="sr-only">Press to guess a number between 1 and 3</div>
+
+        <button class="game-btn" id="hardGame" aria-describedby="hard-desc">🧮 Add 3 Numbers (Hard — 20 coins)</button>
+        <div id="hard-desc" class="sr-only">Press to add three numbers</div>
+      </div>
+
+      <div class="actions">
+        <button id="backToPetMenu" class="secondary">🏠 Back to Pet Menu</button>
+      </div>
+    </section>
+
+    <section class="right-col">
+      <!-- Inline game panel (hidden until a game is started) -->
+      <div id="gamePanel" class="game-panel hidden" role="region" aria-live="polite">
+        <div class="panel-header">
+          <h2 id="gameTitle">Game</h2>
+          <button id="closePanel" class="close-btn" aria-label="Close game panel">&times;</button>
+        </div>
+
+        <div id="gameBody" class="panel-body">
+          <!-- dynamic content injected here -->
+          <p class="muted">Choose a game on the left to begin — results and actions appear here.</p>
+        </div>
+
+        <div class="panel-footer">
+          <div id="gameResult" class="result muted"></div>
+          <div class="panel-actions">
+            <button id="playAgain" class="tertiary hidden">Play Again</button>
+            <button id="claimReward" class="tertiary hidden">Cancel Game</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- small toast -->
+      <div id="popupMessage" class="toast" aria-atomic="true"></div>
+    </section>
+  </main>
+
+  <script src="minigames.js"></script>
+</body>
+</html>

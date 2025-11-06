@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PETSY - Login</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="panel">
+    <div class="brand">PETSY</div>
+    <h2>Login</h2>
+    
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <label>
+        <input type="checkbox" id="rememberPC">
+        Remember this PC
+      </label><br>
+      <div class="button-row">
+        <button type="submit" class="primary">Login</button>
+        <button type="button" class="secondary" onclick="window.location.href='register.html'">Register</button>
+      </div>
+    </form>
+
+    <!-- OTP Step -->
+    <form id="otpForm" style="display:none;">
+    <input type="text" id="otpCode" placeholder="Enter OTP" maxlength="6" required><br>
+    <div class="button-row">
+    <button type="submit" class="primary">Verify OTP</button>
+    </div>
+    <p id="message"></p>
+    </form>
+
+
+    <p id="message"></p>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

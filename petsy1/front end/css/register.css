@@ -1,0 +1,139 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e4f5ef, #fdfdfd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Panel container */
+.panel {
+  background: #fdfdfd;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 340px;
+}
+
+/* PETSY title */
+.panel .brand {
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: #2f5d50;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+/* Section title */
+h2 {
+  margin-bottom: 1rem;
+  color: #2f5d50;
+}
+
+/* Inputs */
+input {
+  width: 90%;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border: 1px solid #b8d6cc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #6ea693;
+  box-shadow: 0 0 5px #6ea69366;
+}
+
+/* Button row */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button.primary {
+  background: #6ea693;
+  color: white;
+}
+
+button.primary:hover {
+  background: #4f7e6e;
+}
+
+button.secondary {
+  background: #cde6dd;
+  color: #2f5d50;
+}
+
+button.secondary:hover {
+  background: #a6c8b8;
+}
+
+/* Message text */
+#message {
+  margin-top: 1rem;
+  color: #2f5d50;
+}
+
+/* Password strength and rules */
+.password-rules {
+  text-align: left;
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.password-rules li {
+  list-style: none;
+  margin: 2px 0;
+}
+
+.password-rules li.valid {
+  color: green;
+}
+
+.password-rules li.invalid {
+  color: red;
+}
+
+.toggle-password {
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #555;
+  margin-left: 5px;
+  position: absolute;
+  right: 10px;
+  top: 35%;
+  transform: translateY(-50%);
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-strength {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+#matchMessage {
+  font-size: 0.9em;
+  margin-top: 5px;
+}

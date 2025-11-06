@@ -1,0 +1,91 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8e1d4, #f6f1eb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Panel container */
+.panel {
+  background: #fff9f6;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 340px;
+}
+
+/* PETSY title */
+.panel .brand {
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: #6b4226;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+/* Section title */
+h2 {
+  margin-bottom: 1rem;
+  color: #6b4226;
+}
+
+/* Inputs */
+input {
+  width: 90%;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e0cfc2;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #c88b6b;
+  box-shadow: 0 0 5px #c88b6b66;
+}
+
+/* Button row */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button.primary {
+  background: #c88b6b;
+  color: white;
+}
+
+button.primary:hover {
+  background: #a06a50;
+}
+
+button.secondary {
+  background: #f2d3ba;
+  color: #6b4226;
+}
+
+button.secondary:hover {
+  background: #d4b297;
+}
+
+/* Message text */
+#loginMessage {
+  margin-top: 1rem;
+  color: #6b4226;
+}

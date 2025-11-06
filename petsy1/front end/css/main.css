@@ -1,0 +1,371 @@
+/* ============================
+   🌙 PETSY Main Page Styles
+   ===========================*/
+
+/* Page layout */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000;
+}
+
+/* Background */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('static/images/background/morning.png') center/cover no-repeat;
+  z-index: 0;
+  transition: background-image 2s ease, opacity 2s ease;
+}
+
+.fade-transition {
+  opacity: 0.8;
+  transition: opacity 1s ease;
+}
+
+/* Main Container */
+.pet-container {
+  position: relative;
+  width: 400px;
+  height: 700px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  padding-bottom: 10px;
+}
+
+/* Header */
+.top-info {
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  margin: 0;
+  color: #ff914d;
+}
+
+#petInfo {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #ffd6a5;
+}
+
+/* Stat Bars */
+#petBars {
+  width: 85%;
+  margin: 1rem auto;
+  color: #fff;
+}
+
+.bar {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bar label {
+  width: 100px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Progress Bars */
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 70%;
+  height: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #222;
+  border: 1px solid #444;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #333;
+  border-radius: 8px;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #ff7b00, #ffb84d);
+  border-radius: 8px;
+}
+
+progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #ff7b00, #ffb84d);
+  border-radius: 8px;
+}
+
+/* Pet Display */
+.pet-display {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#petId {
+  font-weight: bold;
+  color: #ffb703;
+}
+
+.pet-display img {
+  width: 180px;
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+}
+
+/* Side Buttons */
+.side-buttons {
+  position: absolute;
+  right: 10px;
+  bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 2;
+}
+
+/* Eat Button */
+#eatButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  background: rgba(255, 145, 77, 0.8);
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 145, 77, 0.7);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#eatButton:hover {
+  transform: scale(1.1);
+  background: rgba(255, 145, 77, 1);
+}
+
+/* Orange Play/Rest Buttons */
+.circle-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  background: rgba(255, 145, 77, 0.8);
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 145, 77, 0.7);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.circle-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 145, 77, 1);
+}
+
+/* Treat Menu */
+.eat-menu {
+  position: relative;
+  display: inline-block;
+  z-index: 5;
+}
+
+.treat-options {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fffbe6;
+  border: 2px solid #ffcc80;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 8px 0;
+  min-width: 180px;
+  z-index: 1001;
+}
+
+.treat-option {
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #333;
+}
+
+.treat-option:hover {
+  background-color: #ffe0b2;
+}
+
+.treat-option.disabled {
+  color: #aaa;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Bottom Buttons */
+.bottom-buttons {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  gap: 6px;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 64px;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.logout {
+  background: rgba(255, 0, 0, 0.3);
+}
+.logout:hover {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+/* Post Popup */
+.post-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  max-width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  z-index: 10000;
+}
+
+.post-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* == Modal styles == */
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 320px;
+  max-width: 90%;
+  z-index: 1002;
+}
+
+.modal .modal-content {
+  background: rgba(255,255,255,0.98);
+  color: #222;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none !important;
+}
+
+/* Shop buttons */
+.shop-btn {
+  background: #ffb347;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.shop-btn:hover {
+  background: #ff9800;
+}
+
+/* shop result */
+.result {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* option modal small layout */
+.option-row {
+  margin-bottom: 10px;
+}
+
+/* responsive adjustments */
+@media (max-width: 480px) {
+  .pet-container {
+    width: 320px;
+    height: 620px;
+  }
+  .pet-display img {
+    width: 150px;
+  }
+  .bottom-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+.floating-emoji {
+  animation: floatUp 3s ease-out forwards;
+}
+@keyframes floatUp {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -150%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 9999;
+  font-family: sans-serif;
+}

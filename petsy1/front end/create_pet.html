@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Pet</title>
+  <link rel="stylesheet" href="css/create_pet.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Create Your Pet</h2>
+
+    <!-- 🔙 Back to Login -->
+    <button id="backBtn" class="back-btn">⬅ Back to Login</button>
+
+    <form id="petForm">
+      <!-- Pet Name -->
+      <input type="text" id="petName" placeholder="Pet Name" required>
+
+      <!-- Pet Type -->
+      <select id="petType">
+        <option value="Cat">🐱 Cat</option>
+        <option value="Dog">🐶 Dog</option>
+        <option value="Bird">🐦 Bird</option>
+      </select>
+
+      <!-- ✅ Co-Parent Option -->
+      <div class="co-parent">
+        <label>
+          <input type="checkbox" id="isCoParent"> I’m joining as a co-parent
+        </label>
+      </div>
+
+      <!-- ✅ Co-Parent Pet ID Field -->
+      <div id="coParentSection" style="display:none;">
+        <input type="text" id="coParentPetId" placeholder="Enter Pet ID (e.g. 12)">
+        <p class="note">Ask your friend for the pet’s ID to join as co-parent.</p>
+      </div>
+
+      <button type="submit" id="submitBtn">Create Pet</button>
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <!-- ✅ Important: Script goes LAST -->
+  <script src="create_pet.js"></script>
+</body>
+</html>

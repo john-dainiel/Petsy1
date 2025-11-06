@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🐾 PETSY</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="pet-container">
+    <header class="top-info">
+      <h1 class="title">🐾 PETSY</h1>
+      <div id="petInfo">
+        <span id="petId">#0</span> |
+        <span id="petName">Loading...</span> |
+        <span id="petType">Loading...</span> |
+        <span id="petAge">0 days</span> |
+        🪙 <span id="petCoins">0</span>
+      </div>
+    </header>
+
+    <div id="petBars">
+      <div class="bar">
+        <label>Hunger</label><progress id="hungerBar" value="50" max="100"></progress>
+      </div>
+      <div class="bar">
+        <label>Energy</label><progress id="energyBar" value="70" max="100"></progress>
+      </div>
+      <div class="bar">
+        <label>Happiness</label><progress id="happinessBar" value="90" max="100"></progress>
+      </div>
+    </div>
+
+    <div class="pet-display">
+      <img src="static/images/paw.gif" id="petImage" alt="Pet" />
+    </div>
+
+    <div class="side-buttons">
+      <!-- NEW: sponge / clean button above eat -->
+      <button class="circle-btn" id="cleanBtn" title="Clean pet (sponge)">🧽</button>
+
+      <div class="eat-menu">
+        <button id="eatButton">🍽️</button>
+        <div id="treatOptions" class="treat-options hidden">
+          <div class="treat-option" data-type="small">🍪 Small Treat (x<span id="smallCount">0</span>)</div>
+          <div class="treat-option" data-type="medium">🥩 Medium Treat (x<span id="mediumCount">0</span>)</div>
+          <div class="treat-option" data-type="large">🍗 Large Treat (x<span id="largeCount">0</span>)</div>
+        </div>
+      </div>
+      <button class="circle-btn" id="playBtn" title="Pat your pet">🎮</button>
+      <button class="circle-btn" id="restBtn">💤</button>
+    </div>
+
+    <footer class="bottom-buttons">
+      <button class="btn" id="miniGamesBtn">🎯 Mini Games</button>
+      <button class="btn" id="shopBtn">🏪 Shop</button>
+      <button class="btn" id="communityBtn">🐾 Community</button>
+      <button class="btn" id="optionsBtn">⚙️ Options</button>
+      <button class="btn logout" id="logoutBtn">🚪 Logout</button>
+    </footer>
+  </div>
+
+  <!-- Shop Modal -->
+  <div id="shopModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <h2>🏪 Treat Shop</h2>
+      <p>Buy treats for your pet using coins!</p>
+      <div class="shop-items">
+        <button class="shop-btn" data-type="small">🍪 Small Treat — 10🪙</button>
+        <button class="shop-btn" data-type="medium">🥩 Medium Treat — 25🪙</button>
+        <button class="shop-btn" data-type="large">🍗 Large Treat — 50🪙</button>
+      </div>
+      <div id="shopResult" class="result hidden"></div>
+      <button id="closeShopBtn" class="close-btn">❌ Close</button>
+    </div>
+  </div>
+
+  <!-- Options Modal -->
+  <div id="optionsModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <h2>⚙️ Options</h2>
+
+      <div class="option-row">
+        <label for="renameInput"><strong>Rename Pet</strong></label>
+        <input id="newPetName" placeholder="Enter new name" />
+        <div style="margin-top:8px;">
+          <button id="renameBtn">Rename</button>
+        </div>
+        <div id="renameResult" class="result hidden" style="margin-top:8px"></div>
+      </div>
+
+      <hr>
+
+      <div class="option-row">
+        <label for="muteToggle"><strong>Music</strong></label>
+        <div style="display:flex; align-items:center; gap:10px; margin-top:8px;">
+          <button id="muteToggle" class="btn">Mute</button>
+          <span id="muteStatus">Off</span>
+        </div>
+        <div style="font-size:12px; color:#666; margin-top:6px;">This toggles the saved "muted" preference. Add an audio element later for playback control.</div>
+      </div>
+
+      <hr>
+
+      <div class="option-row">
+        <label><strong>Future</strong></label>
+        <div style="font-size:13px; color:#444; margin-top:8px;">Reserved for future settings (privacy, avatar, themes, etc.)</div>
+      </div>
+
+      <div style="margin-top:12px;">
+        <button id="closeOptionsBtn" class="close-btn">❌ Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+
+  <!-- ✅ FIXED LOGIN CHECK -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!localStorage.getItem("isLoggedIn")) {
+        window.location.href = "login.html";
+      }
+
+      const msg = localStorage.getItem("loginMessage");
+      if (msg) {
+        const notif = document.createElement("div");
+        notif.textContent = msg;
+        notif.className = "notif success show";
+        document.body.appendChild(notif);
+
+        setTimeout(() => notif.remove(), 4000);
+        localStorage.removeItem("loginMessage");
+      }
+    });
+  </script>
+</body>
+</html>

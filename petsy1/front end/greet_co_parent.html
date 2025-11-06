@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to Petsy</title>
+  <link rel="stylesheet" href="css/greet_co_parent.css">
+</head>
+<body>
+  <div class="greet-container">
+    <h1 id="greetMessage">Welcome back, <span id="username">User</span>!</h1>
+    <p id="petInfoText">You are co-parenting <strong id="petName">your pet</strong> 🐾</p>
+
+    <div class="pet-preview">
+      <img id="petImage" src="static/images/paw.png" alt="Pet Preview">
+    </div>
+
+    <button id="continueBtn">Continue to Pet</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const username = localStorage.getItem("username");
+      const user_id = localStorage.getItem("user_id");
+
+      document.getElementById("username").textContent = username || "Friend";
+
+      try {
+        const res = await fetch(`http://127.0.0.1:5000/get_pet/${user_id}`);
+        const data = await res.json();
+
+        if (data.error) {
+          document.getElementById("petInfoText").textContent = "No pet found yet.";
+        } else {
+          document.getElementById("petName").textContent = data.pet_name;
+          document.getElementById("petImage").src = data.photo || "static/images/paw.png";
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    });
+
+    document.getElementById("continueBtn").addEventListener("click", () => {
+      window.location.href = "main.html"; // Go to pet simulator
+    });
+  </script>
+</body>
+</html>
